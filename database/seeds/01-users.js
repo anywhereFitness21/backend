@@ -4,7 +4,7 @@ exports.seed = function(knex) {
       { username: 'Smith', email: 'smith@test.com', password: 'smithjohnson', role: 'instructor' },
       { username: 'Ramsha', email: 'ramsha@test.com', password: 'ramshanasir', role: 'attendeee' },
       { username: 'Chase', email: 'chase@test.com', password: 'chasemiller', role: 'attendee' },
-      { username: 'Chase', email: 'chases@test.com', password: 'chasesnider', role: 'instructor' },
+      { username: 'Chases', email: 'chases@test.com', password: 'chasesnider', role: 'instructor' },
       { username: 'chris', email: 'chris@test.com', password: 'chrisbarba', role: 'attendee' },
       { username: 'Benaiah', email: 'benaiah@test.com', password: 'benaiahvarner', role: 'instructor' },
       { username: 'Gabriel', email: 'gabriel@test.com', password: 'gabrielanguiano', role: 'instructor' },

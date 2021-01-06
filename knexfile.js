@@ -1,42 +1,20 @@
-// Update with your config settings.
+// // Update with your config settings.
 
-require('dotenv').config();
+const sharedConfig = {
+  client: 'sqlite3',
+  useNullAsDefault: true,
+  migrations: { directory: './database/migrations' },
+  pool: { afterCreate: (conn, done) => conn.run('PRAGMA foreign_keys = ON', done) },
+}
 
 module.exports = {
   development: {
-    client: 'sqlite3',
-    connection: {
-      host: process.env.DATABASE_HOST,
-      database: process.env.DATABASE_NAME,
-      user: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-    },
-    useNullAsDefault: true,
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      directory: './database/migrations',
-    },
-    seeds: {
-      directory: './database/seeds',
-    },
+    ...sharedConfig,
+    connection: { filename: './database/awf.db3' },
+    seeds: { directory: './database/seeds' },
   },
-
-  production: {
-    client: 'pg',
-    connection: process.env.DATABASE_URL,
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './database/migrations',
-    },
-    seeds: {
-      directory: './database/seeds',
-    },
+  testing: {
+    ...sharedConfig,
+    connection: { filename: './database/test.db3' },
   },
 };

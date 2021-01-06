@@ -1,7 +1,7 @@
 exports.seed = function(knex) {
     // Inserts seed entries for 'classes'
     return knex('classes').insert([
-        { className: 'yoga', class_duration: '35 minutes', classIntensityLevel: 'low', classCity: 'Arlington Heights', classDate: 'January 05, 2021', starTime: '8am' },
+        { className: 'yoga', classDuration: '35 minutes', classIntensityLevel: 'low', classCity: 'Arlington Heights', classDate: 'January 05, 2021', startTime: '8am' },
         
         { className: 'spin', classDuration: '1 hour', classIntensityLevel: 'high', classCity: 'Los Angeles', classDate: 'January 10, 2021', startTime: '10am' },
       
