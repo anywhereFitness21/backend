@@ -19,7 +19,6 @@ exports.up = function(knex) {
           tbl.string('classCity', 75).notNullable();
           tbl.date('classDate');
           tbl.string('startTime');
-          tbl.datetime('classTimezone');
         })
   
         .createTable('attendees', tbl => {

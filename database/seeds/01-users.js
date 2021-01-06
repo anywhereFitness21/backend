@@ -1,7 +1,7 @@
 exports.seed = function(knex) {
     // Template for inserting seed entries --> I just removed the intitial return function
     return knex('users').insert([
-      { username: 'Smith', email: 'smith@test.com', password: 'smithjohnson', role: 'instructor' }, //change these to whatever matches our schema
+      { username: 'Smith', email: 'smith@test.com', password: 'smithjohnson', role: 'instructor' },
       { username: 'Ramsha', email: 'ramsha@test.com', password: 'ramshanasir', role: 'attendeee' },
       { username: 'Chase', email: 'chase@test.com', password: 'chasemiller', role: 'attendee' },
       { username: 'Chase', email: 'chases@test.com', password: 'chasesnider', role: 'instructor' },

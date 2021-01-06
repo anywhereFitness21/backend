@@ -11,6 +11,5 @@ exports.seed = function(knex) {
       
         {className: 'hot yoga', classDuration: '45 minutes', classIntensityLevel: 'high', classCity: 'Hollywood', classDate: 'January 25, 2021', startTime: '5pm'
         },
-      
         ]);
   };
