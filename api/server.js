@@ -14,7 +14,7 @@ server.use(helmet());
 
 //initial get request to make sure api and server up and running
 server.get('/', (req, res) => {
-  res.status(200).json({ message: 'Anywhere fitness app api and server working' });
+  res.status(200).json({ message: 'Api and server are up and running!' });
 });
 
 //routes go below
