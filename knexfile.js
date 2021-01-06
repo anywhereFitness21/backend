@@ -4,7 +4,7 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    client: 'pg',
+    client: 'sqlite3',
     connection: {
       host: process.env.DATABASE_HOST,
       database: process.env.DATABASE_NAME,
