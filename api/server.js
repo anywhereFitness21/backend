@@ -12,7 +12,7 @@ server.use(express.json());
 server.use(cors());
 server.use(helmet());
 
-//initial get request to make sure api and server up and running
+//initial get request to make sure api/ server up and running
 server.get('/', (req, res) => {
   res.status(200).json({ message: 'Api and server are up and running!' });
 });
