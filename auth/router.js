@@ -17,7 +17,7 @@ router.post('/register', middleware.registerVerification, (req, res) => {
 
   Users.addUser(newUser)
     .then(user => {
-      // console.log('inside authRouter addUser', user);
+    
 
       const token = signToken(user); //invoke the function and pass in the 'user'
       res.status(200).json({ user: { id: user.id, username: user.username, email: user.email, role: user.role, token: token, message: `Welcome, ${user.username}. Thanks for registering as an ${user.role} today! ` } });
@@ -28,33 +28,30 @@ router.post('/register', middleware.registerVerification, (req, res) => {
     });
 });
 
-//login (POST) --> for endpoint beginning --> endpoing with /api/auth
+//login (POST) endpoint with /api/auth
 router.post('/login', (req, res) => {
-  //add here
+
   const { username, password, role } = req.body;
 
   Users.findBy(username)
     .then(user => {
-      // console.log('inside user findBy', user);
       if (user && bcrypt.compareSync(password, user.password)) {
-        //create the token
-        const token = signToken(user); //invoke the function and pass in the 'user'
+        const token = signToken(user);
 
-        res.status(200).json({ user: { id: user.id, message: `Welcome ${user.username}. Thanks for being an ${user.role} today! `, username: user.username, email: user.email, role: user.role, token: token } });
+        res.status(200).json({ user: { id: user.id, message: `Welcome ${user.username}. Thank you for being our ${user.role} today! `, username: user.username, email: user.email, role: user.role, token: token } });
       } else {
         res.status(401).json({ message: 'Sorry, Invalid credentials' });
       }
     })
     .catch(error => {
-      console.log('inside authRouter findBy error', error);
+      // console.log('inside authRouter findBy error', error);
       res.status(500).json({ message: 'Sorry, login not working on the server', error });
     });
 });
 
-//signToken function here
 function signToken(user) {
   const payload = {
-    //add any data we want to store in token payload
+    //data to store in token payload
     user
   };
 
