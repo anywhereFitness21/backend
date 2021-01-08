@@ -26,7 +26,7 @@ GET -all classes
 GET - single class by id
 /api/classes/1
 
-POST POST - create a new class
+POST - create a new class
 /api/classes
 
 GET - all classes by user id
