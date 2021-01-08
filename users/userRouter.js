@@ -3,9 +3,8 @@ const Users = require('../users/userModel');
 const restricted = require('../auth/restricted-middleware');
 const router = express.Router();
 
-//getUsers --> returns a list of all 'users' --> from endpoint --> /api/users
+//getUsers from /api/users
 
-//removed 'restricted' for get all users to work
 router.get('/', (req, res) => {
   //add logic here
   Users.getUsers()
@@ -19,13 +18,14 @@ router.get('/', (req, res) => {
     });
 });
 
-//getUserById --> returns a list of a single 'user' by 'id' ---> from endpoint ---> /api/user/:id
+//getUserById
+//returns a list of a single 'user' by 'id' from /api/user /: id
 router.get('/:id', (req, res) => {
   const userId = req.params.id;
 
   Users.getUserById(userId)
     .then(user => {
-      // console.log('inside getUserById', user);
+      
       if (user) {
         res.status(200).json(user);
       } else {
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// PUT(Update user)
+// PUT(Updates user)
 router.put('/:id', (req, res) => {
   Users.updateUser(req.params.id, req.body)
     .then(user => {
