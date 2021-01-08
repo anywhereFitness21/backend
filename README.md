@@ -4,7 +4,7 @@ Routes
 
 POST -register
 /api/auth/register
-POST -login - heroku
+POST -login
 /api/auth/login
 GET -all users
 /api/users
